@@ -8,7 +8,6 @@ Problem Statement
 1
 
 Menu-Driven Calculator: Design and implement a Java program that performs arithmetic operations using a menu-driven approach with proper user input validation and modular methods.
-
 2
 
 Vehicle Management System: Create a Vehicle class with attributes and methods. Extend the program to manage multiple vehicles using arrays and generate summary reports.
