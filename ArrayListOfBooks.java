@@ -2,29 +2,6 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-// Book Class
-class Book {
-    public String title;
-    public double price;
-    public String ISBN;
-    public String genre;
-    public String author;
-
-    public Book(String title, double price, String ISBN, String genre, String author) 
-            throws InvalidBookException {
-
-        if (price < 0) {
-            throw new InvalidBookException("Price cannot be negative!");
-        }
-
-        this.title = title;
-        this.price = price;
-        this.ISBN = ISBN;
-        this.genre = genre;
-        this.author = author;
-    }
-}
-
 public class ArrayListOfBooks {
 
     public static void main(String[] args) {
@@ -34,14 +11,14 @@ public class ArrayListOfBooks {
 
         try {
             // Predefined 8 books
-            bookList.add(new Book("Java Basics", 499.99, "ISBN001", "Education", "John Smith"));
-            bookList.add(new Book("Data Structures", 699.50, "ISBN002", "Computer Science", "Alice Brown"));
-            bookList.add(new Book("Operating Systems", 850.75, "ISBN003", "Computer Science", "Andrew Tan"));
-            bookList.add(new Book("Database Systems", 720.40, "ISBN004", "Technology", "Michael Lee"));
-            bookList.add(new Book("Python Programming", 550.00, "ISBN005", "Education", "David Clark"));
-            bookList.add(new Book("Artificial Intelligence", 999.99, "ISBN006", "Technology", "Sophia Martin"));
-            bookList.add(new Book("Web Development", 650.25, "ISBN007", "Programming", "Emma Wilson"));
-            bookList.add(new Book("Ek tha raja Ek Thi Raani", 100000.0, "ISBN008", "Fiction", "Proest of Pros Nemo"));
+            bookList.add(new Book(1, "Java Basics", 499.99, "ISBN001", "Education", "John Smith"));
+            bookList.add(new Book(2, "Data Structures", 699.50, "ISBN002", "Computer Science", "Alice Brown"));
+            bookList.add(new Book(3, "Operating Systems", 850.75, "ISBN003", "Computer Science", "Andrew Tan"));
+            bookList.add(new Book(4, "Database Systems", 720.40, "ISBN004", "Technology", "Michael Lee"));
+            bookList.add(new Book(5, "Python Programming", 550.00, "ISBN005", "Education", "David Clark"));
+            bookList.add(new Book(6, "Artificial Intelligence", 999.99, "ISBN006", "Technology", "Sophia Martin"));
+            bookList.add(new Book(7, "Web Development", 650.25, "ISBN007", "Programming", "Emma Wilson"));
+            bookList.add(new Book(8, "Ek tha raja Ek Thi Raani", 100000.0, "ISBN008", "Fiction", "MST"));
 
         } catch (InvalidBookException e) {
             System.out.println("Error creating book: " + e.getMessage());
@@ -72,13 +49,7 @@ public class ArrayListOfBooks {
 
         for (int i = 0; i < n; i++) {
             Book b = bookList.get(i);
-
-            System.out.println("Title: " + b.title);
-            System.out.println("Price: " + b.price);
-            System.out.println("ISBN: " + b.ISBN);
-            System.out.println("Genre: " + b.genre);
-            System.out.println("Author: " + b.author);
-            System.out.println("----------------------------");
+            b.displayBook(b);
 
             totalPrice += b.price;
 
